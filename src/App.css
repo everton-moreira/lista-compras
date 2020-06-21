@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+input[type=email]:focus:not([readonly]) ~ label,
+input[type=email]:focus:not([readonly]) ~ div > i,
+input[type=text]:focus:not([readonly]) ~ label,
+input[type=text]:focus:not([readonly]) ~ i,
+input[type=password]:focus:not([readonly]) ~ i,
+input[type=password]:focus:not([readonly]) ~ label {
+  color: #FFA000 !important; 
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type=text]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #FFA000 !important;
+  box-shadow: 0 1px 0 0 #FFA000 !important; 
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a.app:link, a.app:visited {
+  color: #FFA000 !important;
+  font-weight: 600;
+  font-size: 0.8em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a.app:hover {
+  color: #ef6c00 !important;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+body, html {
+  background: rgb(243, 243, 243);
+  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  height: 100%;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg_loading{
+  position: fixed;
+  height: 90vh;
+  background-color: #fff8e1;
+  opacity: 0.7;
+  top: 0;
+  left: -10;
+  z-index: 999;
+  width: 100%;
+  margin: 0;
+}
+
+.bg_loading > div > div{
+  margin-top: 35vh;
+  background-color: #FFF;
+  z-index: 9999;
+  /*border: 2px solid #ffa000;*/
+}
+
+.imgloader {
+  height: 80px;
+  margin: 0;
+  padding: 0;
+}
+
+.imglogin{
+  width: 100px;
 }

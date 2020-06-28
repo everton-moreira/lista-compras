@@ -41,7 +41,7 @@ export default function Form() {
 
     return (
         <>
-            {go && <Redirect to="/products" />}
+            {go && <Redirect to="/lists" />}
             <MDBCol className="text-center">
                 <MDBCard>
                     <MDBCardBody>

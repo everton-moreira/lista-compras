@@ -1,15 +1,18 @@
 import React, { Component } from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown, MDBDropdownToggle, MDBDropdownItem, MDBDropdownMenu, MDBIcon } from "mdbreact";
+import { Link } from 'react-router-dom';
+import {getUser} from '../../services/auth';
+
+const {sub} = getUser();
 
 export class Header extends Component {
-
-
+    
     state = {
         isOpen: false,
         categories: this.props.categories ? this.props.categories : false,
         lists: this.props.lists ? this.props.lists : false,
-        products: this.props.products ? this.props.products : false
+        products: this.props.products ? this.props.products : false,
+        users: this.props.users ? this.props.users : false
     };
 
 
@@ -34,6 +37,23 @@ export class Header extends Component {
                         </MDBNavItem>
                         <MDBNavItem className={this.state.categories ? 'active' : ''}>
                             <MDBNavLink to="/categories">Categorias</MDBNavLink>
+                        </MDBNavItem>
+                        <MDBNavItem className={this.state.users ? 'active' : ''}>
+                            <MDBNavLink to="/users">Usuários</MDBNavLink>
+                        </MDBNavItem>
+                    </MDBNavbarNav>
+                    <MDBNavbarNav right>
+                        <MDBNavItem>
+                            <MDBDropdown>
+                                <MDBDropdownToggle nav caret>
+                                    <MDBIcon icon="user" /> {sub.username}
+                                </MDBDropdownToggle>
+                                <MDBDropdownMenu className="dropdown-default">
+                                    <Link to="/changeuser">Alterar dados</Link>
+                                    <MDBDropdownItem divider />
+                                    <Link to="/logout">Sair</Link>
+                                </MDBDropdownMenu>
+                            </MDBDropdown>
                         </MDBNavItem>
                     </MDBNavbarNav>
                 </MDBCollapse>

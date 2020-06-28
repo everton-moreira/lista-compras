@@ -28,7 +28,7 @@ a.app:hover {
 }
 
 body, html {
-  background: rgb(243, 243, 243);
+  background: #fafafa !important;
   font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
